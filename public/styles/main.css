@@ -1,4 +1,4 @@
-@import "@material/floating-label/mdc-floating-label";
+/* @import "@material/floating-label/mdc-floating-label"; */
 
 /* default main.css under here */
 img {
@@ -257,6 +257,10 @@ footer .mdl-logo a {
   justify-content: space-around;
 }
 
+#tvButton {
+  background-color: tomato;
+  width: 100px;
+}
 #allButton {
   background-color: tomato;
   width: 100px;
@@ -312,7 +316,6 @@ footer .mdl-logo a {
 }
 
 .saveButton {
-  background-color: tomato;
   cursor: pointer;
 }
 
@@ -354,8 +357,7 @@ footer .mdl-logo a {
 }
 #box {
   /* border: black solid 2px; */
-  margin-left: 30%;
-  margin-right: 10%;
+  margin-left: 25%;
   
   margin-top: 40px;
   /* display: inline; */
@@ -365,28 +367,50 @@ footer .mdl-logo a {
 
 
 .displayPic {
-  height: 160px;
-  width: 100px;
+  /* height: 160px;
+  width: 100px; */
 }
 
 .cardImg {
-  /* display: inline; */
+  /* display: inline-block; */
+  width: 150px;
+  height: 200px;
+  text-align: center;
+  margin-top: 2%;
   /* border: red solid 3px;  */
   float: left;
 }
 
 .cardText {
-  /* display: inline; */
+  /* display: inline-block; */
+  width: 750px;
+  height: 200px;
+  /* text-align: center; */
   /* border: black solid 3px; */
   margin-left: 5px;
+  margin-top: 2%;
   float: left;
 }
 
 .cardDiv {
-  float: left;
-  height: 220px;
-  width: 500px;
+  /* float: left; */
+  
+  height: 200px;
+  width: 1020px;
   /* display: inline; */
-  /* border: green solid 3px;  */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+  margin-bottom: 5%;
 }
 
+/* .inline{
+  float: left;
+} */
+
+.mdl-card {
+  width: 1000px;
+  margin-bottom: 10px;
+  /* text-align: center; */
+  float: left;
+}

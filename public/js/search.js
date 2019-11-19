@@ -70,21 +70,6 @@ $(document).ready(function () {
         })
     }
 
-
-
-    // async function callData(){
-    //     console.log('in call data')
-    //     try{
-    //         console.log('in try')
-    //         const callPod = await callPodcast()
-
-
-    //         // const results = await Promise.all([callPodcast, addItem])
-    //     } catch(e){
-    //         throw e
-    //     }
-    // }
-
     $('#searchButton').on('click', function (event) {
         event.preventDefault()
         $('#box').text('')
@@ -94,8 +79,10 @@ $(document).ready(function () {
         console.log(searchTerm)
         console.log('working')
         // function callPodcast() {
+        
         const podQueryURL = 'https://itunes.apple.com/search?term=' + searchTerm + '&entity=' + value +'&limit=10'
         let lookUpId = 'https://itunes.apple.com/lookup?id=769189585'
+        
         $.ajax({
             url: podQueryURL,
             method: "GET",
@@ -116,12 +103,15 @@ $(document).ready(function () {
                     console.log(response.results[i].artistName)
                     console.log(response.results[i].kind)
                     console.log('------------------------------------')
-                    // if(value === 'tvSeason') {
-                    //     console.log('tv show')
-                    // } else {
-                    const cardDiv = $("<div class= 'cardDiv'>")
-                    const movieDiv = $("<div class='cardImg'>");
-                    const movieDiv2 = $("<div class='cardText'>")
+                    
+
+                    const cardDiv = $("<div>")
+                    cardDiv.attr({
+                        class: 'cardDiv '
+                        // class: 'mdl-card mdl-shadow--2dp'
+                    })
+                    const movieDiv = $("<div class='cardImg inline'>");
+                    const movieDiv2 = $("<div class='cardText inline'>")
                   
                     const artwork = response.results[i].artworkUrl100;
                     const pOne = $("<img>").attr({
@@ -153,17 +143,10 @@ $(document).ready(function () {
                             itemId: response.results[i].collectionId,
                             UserId: userId,
                         })
-                        $('.saveButton').text('add')
+                        
                         movieDiv2.append(save)
+
                     } else {
-                                //   ------------------------------------------
-                    // const id = response.results[i].trackId;
-                    // const pID = $("<p>").text("Id" + id);
-                    // movieDiv2.append(pID);
-
-                    //   ---------------------------------------------
-                    
-
 
                     const name = response.results[i].trackName;
                     const pTwo = $("<p>").text("Title: " + name);
@@ -192,7 +175,11 @@ $(document).ready(function () {
                     $(cardDiv).append(movieDiv);
                     $(cardDiv).append(movieDiv2)
                     $('#box').append(cardDiv)
-                    $('.saveButton').text('add')
+                    if (!user) {
+                        $('.saveButton').text('')
+                    } else {
+                        $('.saveButton').text('add')
+                    }
                 
                 }
             }
@@ -200,33 +187,25 @@ $(document).ready(function () {
      
         )
 })
-// }
 
+        $(document).on('click', '.saveButton', saveObject)
 
-// function addAnItem(){
-//     console.log('ITEM')
-
-// }
-
-
-$(document).on('click', '.saveButton', saveObject)
-
-function saveObject() {
-    console.log('plus')
-        $(this).css('display', 'none')
-    item = ({
-        catagory: $(this).attr('catagory'),
-        title: $(this).attr('title'),
-        itemId: $(this).attr('itemId'),
-        UserId: $(this).attr('UserId')
-    })
-    console.log(item)
-    $.post("/api/newItem", item)
-        .then(function (item) {
+        function saveObject() {
+            console.log('plus')
+                $(this).css('display', 'none')
+            item = ({
+                category: $(this).attr('catagory'),
+                title: $(this).attr('title'),
+                itemId: $(this).attr('itemId'),
+                UserId: $(this).attr('UserId')
+            })
             console.log(item)
-            console.log('in post')
-        })
-        $(this).hide();
-}
+            $.post("/api/newItem", item)
+                .then(function (item) {
+                    console.log(item)
+                    console.log('in post')
+                })
+                $(this).hide();
+        }
 
 })
