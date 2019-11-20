@@ -7,6 +7,11 @@ The concept of our app originated from the hustle and bustle in everyday life an
 With our app, *“The Later List”*, users will be able to search for recommended podcasts, tv shows, or movies and save them to your list for when you have time later.
 
 ![Image of Homepage](https://github.com/StanStanley512/Project2/blob/master/public/img/sign-up-page-screenshot.JPG)
+
+## Using the App
+
+When you first start using *"The Later List"* you start on the home page where you have the options to **SEARCH** or **LOGIN**. You aren't required to login in order to utilize the search function, however if you are logged in then you'll be able to take advantage of the **MY LIST** feature where you can store your saved recommendations for when you have more time or you need something new to listen to or watch.
+
 ![Image of search page](https://github.com/StanStanley512/Project2/blob/master/public/img/search-screenshot.JPG)
 
 ## Design Process
