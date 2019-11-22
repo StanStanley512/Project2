@@ -370,38 +370,6 @@ footer .mdl-logo a {
   width: 100px; */
 }
 
-.cardImg {
-  /* display: inline-block; */
-  width: 150px;
-  height: 200px;
-  text-align: center;
-  margin-top: 2%;
-  /* border: red solid 3px;  */
-  float: left;
-}
-
-.cardText {
-  /* display: inline-block; */
-  width: 750px;
-  height: 200px;
-  /* text-align: center; */
-  /* border: black solid 3px; */
-  margin-left: 5px;
-  margin-top: 2%;
-  float: left;
-}
-
-.cardDiv {
-  /* float: left; */
-  
-  height: 200px;
-  width: 1020px;
-  /* display: inline; */
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
-  margin-bottom: 5%;
-}
 
 /* .inline{
   float: left;
@@ -412,4 +380,58 @@ footer .mdl-logo a {
   margin-bottom: 10px;
   /* text-align: center; */
   float: left;
+}
+
+#box {
+  /* border: 2px solid red; */
+  margin: 0;
+  padding: 0;
+  /* display: flex; */
+}
+
+#boxParent {
+  /* border: 2px solid green; */
+}
+
+.leftSide {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.rightSide {
+  /* border: 2px solid purple; */
+  /* display: flex; */
+  text-align: center;
+  float: left;
+}
+
+.cardDiv {
+  /* border: 2px solid black; */
+  margin: 0;
+  padding: 0;
+  width: 50vw;
+  max-width: 50vw;
+  min-width: 50vw;
+  margin-bottom: 20px;
+}
+
+#boxInBox {
+  margin: 0;
+  padding: 0;
+  /* border: 2px solid orange; */
+  padding-left: 1px;
+  padding-right: 1px;
+  display: flex;
+  justify-content: center;
+}
+
+#aboveBox {
+  margin-bottom: 20px;
+}
+
+.destroyButton {
+  cursor: pointer;
 }

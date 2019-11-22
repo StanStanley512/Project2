@@ -16,6 +16,8 @@
   <!-- material design -->
   <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+  <!-- <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" /> -->
   <link href="styles/main.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery.js"></script>
 </head>
@@ -35,11 +37,11 @@
           <!-- <a class="mdl-navigation__link" href="/browse">Browse</a> -->
           <!-- --------------------------- -->
           <a class="mdl-navigation__link" id=signout href="#">Signout</a>
-          <a class="mdl-navigation__link" id='login' href="/login">Login</a>   
+          <a class="mdl-navigation__link" id='login' href="/login">Login</a>
           <!-- ----------------------------------- -->
-          
+
         </nav>
-        
+
 
 
       </div>
@@ -51,8 +53,8 @@
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <div class="site-content">
-        <div class="container">
+      <div class="site-content" id="boxParent">
+        <div class="container" id="aboveBox">
           <div class="mdl-grid site-max-width">
             <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset listButtonsBox">
 
@@ -80,15 +82,17 @@
             </div>
 
           </div>
-            <div id=box>
+        </div>
 
-            </div>
+        <div class="container" id=box>
+
+          <div class="mdl-grid" id="boxInBox">
+          </div>
         </div>
       </div>
       <footer class="mdl-mini-footer">
         <div class="footer-container">
-          <div class="mdl-logo">&copy; Unitiled. Design: <a href="https://templateflip.com/"
-              target="_blank">TemplateFlip</a></div>
+          <div class="mdl-logo">&copy; The Later List. Design: Awkward Turtles</div>
           <ul class="mdl-mini-footer__link-list">
             <li><a href="#">Privacy & Terms</a></li>
           </ul>
@@ -100,12 +104,11 @@
 
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    
-    <script src="./js/portfolio.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+
+  <script src="./js/portfolio.js"></script>
 </body>
 
 </html>
