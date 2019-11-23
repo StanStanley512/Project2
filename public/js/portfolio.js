@@ -133,6 +133,10 @@ $(document).ready(function () {
                             rightDiv.append(pThree);
                             //   ------------------------------------------------
 
+                            const kind = response.results[0].kind;
+                            const pFour = $("<p>").text("Kind: " + kind);
+                            rightDiv.append(pFour);
+
                             const minus = $('<div>').attr({
                                 id: "tt1",
                                 class: "icon material-icons destroyButton",
@@ -181,21 +185,31 @@ $(document).ready(function () {
                         console.log(response);
 
 
-                        const cardDiv = $("<div class='cardDiv'>")
-                        const leftDiv = $("<div class='cardImg'>");
-                        const rightDiv = $("<div class='cardText'>")
+                        const boxInBox = $("<div>")
+                        boxInBox.attr({
+                            class: 'mdl-grid',
+                            id: 'boxInBox'
+                        })
+                        const cardDiv = $("<div>")
+                        cardDiv.attr({
+                            class: 'mdl-grid mdl-card mdl-shadow--4dp cardDiv'
+                        })
+                        const leftDiv = $("<div class='mdl-cell mdl-cell--4-col leftSide '>");
+                        const rightDiv = $("<div class='mdl-cell mdl-cell--8-col rightSide '>")
+                        console.log(response);
                         const artwork = response.results[0].artworkUrl100;
-                        const pOne = $("<img>").attr({
+                        const imgHtml = $("<img>").attr({
                             src: artwork,
                             class: "displayPic",
-
                         });
-                        leftDiv.append(pOne);
+
+                        leftDiv.append(imgHtml);
+
 
                         if (data[i].category === 'tvSeason') {
                             console.log('tv show')
                             const name = response.results[0].collectionName
-                            const title = $('<p>').text("Title: " + name)
+                            const title = $('<p>').text("Titlemann: " + name)
                             rightDiv.append(title)
 
                             const kind = response.results[0].collectionType
@@ -209,7 +223,7 @@ $(document).ready(function () {
                         } else {
 
                             const name = response.results[0].trackName;
-                            const pTwo = $("<p>").text("Title: " + name);
+                            const pTwo = $("<h4>").text(name);
                             rightDiv.append(pTwo);
                             //   -----------------------------------------------
                             const artist = response.results[0].artistName;
@@ -233,7 +247,8 @@ $(document).ready(function () {
 
                         $(cardDiv).append(leftDiv);
                         $(cardDiv).append(rightDiv)
-                        $('#box').append(cardDiv)
+                        $(boxInBox).append(cardDiv)
+                        $('#box').append(boxInBox)
                         $('.destroyButton').text('cancel')
 
                     }
